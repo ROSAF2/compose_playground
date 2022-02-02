@@ -1,4 +1,7 @@
 ---
+### Presentation [Link](https://otagopoly-my.sharepoint.com/:v:/g/personal/rosaf2_student_op_ac_nz/EZusDSAGgM1HrBGyvZRmaikBIxlH2m81hkoPasP_TAl7Pg?e=tEKRVr)
+---
+
 # Jetpack Compose
 
 ##### Overview
@@ -15,13 +18,13 @@ fun HelloCompose(greeting: String) {
 }
 ```
 
-Where `Text("Hello Compose")` is a pre-build composable function.
+Where `Text("Hello Compose")` is a pre-built composable function.
 
 One would normally want their composables to be small as they are easier to reuse.
 
 ##### MainActivity 
 
-The MainActivity is much simpler in compose. It now inherits from : `ComponentActivity()` and instead of associating a layout with `setContentView`, we just wrap our content as shown below. 
+The MainActivity is much simpler in compose. It now inherits from `ComponentActivity()` and instead of associating a layout with `setContentView`, we just wrap our content as shown below. 
 ```kotlin
 setContent {
     // Content
@@ -30,7 +33,7 @@ setContent {
 
 ##### Previews
 These portions of UI can be isolated and previewed in android studio.
-To achieve this, we need to annotate the composable function with `@Preview` anotation which can take parameters, for example:
+To achieve this, we need to annotate the composable function with `@Preview` anotation which can also take parameters, for example:
 
 ```kotlin
 @Preview(showBackground = true)
@@ -46,7 +49,7 @@ Bear in mind that in order to use previews, the composables that take parameters
 
 
 ##### Themes
-To style our composables, android studio creates a theme using the name of our project by default. All we need to do is to wrap our content around our them like:
+To style our composables, android studio creates a theme using the name of our project by default. All we need to do is to wrap our content around our theme like:
 
 ```kotlin
     MyComposableTheme {
@@ -78,7 +81,7 @@ It is important to know that the order of the modifiers matter.
 
 ##### Layout
 
-These are a special type of composables that allows us to arrange items in screens, for example:
+These are special types of composables that allow us to arrange items in screens, for example:
 
 ```kotlin
 Column (
@@ -121,7 +124,7 @@ Let's say that we have the following code:
 fun Counter() {
     var counter = 0
     Button(onClick = { counter++ }) {
-        Text("${counter} times clicked.")
+        Text("$counter times clicked.")
     }
 }
 ```
@@ -137,7 +140,7 @@ fun Counter() {
         mutableStateOf(0)
     }
     Button(onClick = { counter++ }) {
-        Text("${counter} times clicked.")
+        Text("$counter times clicked.")
     }
 }
 ```
@@ -146,10 +149,10 @@ In this case, `Counter()` creates an internal state as the value of counter gets
 
 ##### State Hoisting
 
-If for some reason we want to use the counter variable outside of `Counter()` we would need to "move up the state". This is also known as state hoisting. Hencem a stateless composable is a composable that does not hold any state.
+If for some reason we want to use the counter variable outside of `Counter()` we would need to "move up the state". This is also known as state hoisting. Hence, a stateless composable is a composable that does not hold any state.
 
 
-Let's grab the last example and remove the state from `Count()`into `Container()`.
+Let's grab the last example and remove the state from `Count()` into `Container()`.
 
 ```kotlin
 @Composable
@@ -463,7 +466,6 @@ fun RobotsScreen(navController: NavController, robotsViewModel: RobotsViewModel)
 The declarative approach of Jetpack Compose offers a lot of familiarity for those into web developement, it also makes the code more manageble as all the UI can be programatically created. Additionally, it also includes several features right off the bat like recyclerview or modifier animations which make things way easier than before. But above all, the developement experience that it delivers is a strong point for those who are planning to develop their next big project. 
 
 Happy Composing!.
-
 
 ### Citations
 * Android Developers. (2021, February 24). *Jetpack Compose: State* [Video]. YouTube. https://www.youtube.com/watch?v=mymWGMy9pYI
